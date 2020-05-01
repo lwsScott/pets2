@@ -13,9 +13,15 @@ $f3 = Base::instance();
 //define a default route
 //when user visits the default root(file) - ...328/hello
 //it runs the function
-$f3->route('GET /', function(){
+$f3->route('GET|POST /order', function(){
     //echo '<h1>My Pets</h1>';
     //echo "<a href='order'>Order a Pet</a>";
+    //checks if the form has been submitted
+    if($_SERVER['REQUEST_METHOD']=='POST'){
+        echo "post method";
+    } else {
+        echo "get method";
+    }
     $view = new Template();
     echo $view->render('views/pet-home.html');
 });
