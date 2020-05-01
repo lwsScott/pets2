@@ -14,9 +14,10 @@ $f3 = Base::instance();
 //when user visits the default root(file) - ...328/hello
 //it runs the function
 $f3->route('GET /', function(){
-    echo '<h1>My Pets</h1>';
-    echo "<a href='order'>Order a Pet</a>";
-
+    //echo '<h1>My Pets</h1>';
+    //echo "<a href='order'>Order a Pet</a>";
+    $view = new Template();
+    echo $view->render('views/pet-home.html');
 
 
 });
