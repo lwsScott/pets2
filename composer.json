@@ -1,0 +1,17 @@
+{
+"name": "lscottgr/328/rain",
+"authors": [
+{
+"name": "Lewis Scott",
+"email": "lscott19@mail.greenriver.edu"
+},
+{
+  "name": "Amardip Kaur",
+  "email": "akaur66@mail.greenriver.edu"
+
+}
+],
+"require": {
+"bcosca/fatfree-core": "dev-master"
+}
+}
