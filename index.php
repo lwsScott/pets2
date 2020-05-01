@@ -18,8 +18,13 @@ $f3->route('GET /', function(){
     //echo "<a href='order'>Order a Pet</a>";
     $view = new Template();
     echo $view->render('views/pet-home.html');
+});
 
-
+$f3->route('GET /order', function(){
+    //echo '<h1>My Pets</h1>';
+    //echo "<a href='order'>Order a Pet</a>";
+    $view = new Template();
+    echo $view->render('views/pet-order.html');
 });
 
 //run fat free
