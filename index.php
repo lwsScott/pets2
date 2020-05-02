@@ -1,4 +1,13 @@
 <?php
+/*
+ * Lewis Scott
+ * Andrew Harris
+ * Ben Halbert
+ * Pair Program Pets 2
+ * Routing controller for site
+ * validates form submission and routes to
+ * order summary
+ */
 session_start();
 //turn on error reporting
 ini_set('display_errors', 1);
@@ -46,11 +55,10 @@ $f3->route('GET|POST /order', function($f3){
         if($valid)
             {
              //Data is valid
-             $_SESSION['pet'] = $_POST['pet'];
-             $_SESSION['color'] = $_POST['color'];
 
-		      //***Add the color to the session
-
+		      //***Add the pet choice and color to the session
+                $_SESSION['pet'] = $_POST['pet'];
+                $_SESSION['color'] = $_POST['color'];
 
 		      //Redirect to the summary route
              $f3->reroute("summary");
