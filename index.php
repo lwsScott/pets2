@@ -45,12 +45,21 @@ $f3->route('GET|POST /order', function($f3){
 
 		      //Redirect to the summary route
              $f3->reroute("summary");
+             session_destroy();
          }
 
     }
 
     $view = new Template();
     echo $view->render('views/pet-order.html');
+});
+
+$f3->route('GET /summary', function()
+{
+    //echo '<h1>My Pets</h1>';
+    //echo "<a href='order'>Order a Pet</a>";
+    $view = new Template();
+    echo $view->render('views/order-summary.html');
 });
 
 
