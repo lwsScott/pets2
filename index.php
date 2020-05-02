@@ -31,17 +31,26 @@ $f3->route('GET|POST /order', function($f3){
     //checks if the form has been submitted
     if($_SERVER['REQUEST_METHOD']=='POST')
     {
+        $valid = true;
         //Validate the data
         if (empty($_POST['pet']))
         {
-            echo "Please supply a pet type";
+            $valid = false;
+            echo "Please supply a pet type <br>";
         }
-        else
+        if ($_POST['color'] != "Brown" && $_POST['color'] != "Black" && $_POST['color'] != "White")
+        {
+            $valid = false;
+            echo "Please supply a valid color";
+        }
+        if($valid)
             {
              //Data is valid
              $_SESSION['pet'] = $_POST['pet'];
+             $_SESSION['color'] = $_POST['color'];
 
 		      //***Add the color to the session
+
 
 		      //Redirect to the summary route
              $f3->reroute("summary");
